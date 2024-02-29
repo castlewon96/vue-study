@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  html {
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    line-height: 1.1;
+    letter-spacing: -1px;
+    box-sizing: border-box;
+    background: #000;
+    color: #fff;
+  }
+  .container {
+    max-width: 1240px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .menu {
+    padding: 10px 0;
+    background: #000;
+  }
+  .menu .container {
+    display: flex;
+    align-items: center;
+  }
+  .menu .logo img {
+    width: 70px;
+  }
+  .menu .menu-list {
+    display: flex;
+    margin-left: 30px;
+  }
+  .menu .menu-list li {
+    padding: 0 15px;
+  }
+  .menu .menu-list a {
+    color: #fff;
+  }
+  .post-area {
+    padding-top: 60px;
+    text-align: center;
+  }
+  .post-area .post-area-item {
+    position: relative;
+    border: 1px solid #fff;
+    border-left: none;
+    border-right: none;
+  }
+  .post-area .post-area-item + .post-area-item {
+    border-top: none;
+  }
+  .post-area .post-area-item a {
+    display: block;
+    text-align: left;
+    padding: 30px 15px;
+  }
+  .post-area .post-area-item .btn_recommend {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    color: #25F0D7;
+  }
+  .post-area h4 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .post-area p {
+    margin-top: 10px;
+  }
