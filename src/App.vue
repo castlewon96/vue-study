@@ -1,17 +1,27 @@
 <template>
   <div class="menu">
     <div class="container">
-      <a href="javascript:;"><img src="./assets/logo.png" alt="로고" /></a>
-      <a href="javascript:;" v-for="(a, i) in menus" :key="i">{{ a }}</a>
+      <a href="javascript:;" class="logo"><img src="./assets/logo-text.svg" alt="로고" /></a>
+      <ul class="menu-list">
+        <li v-for="(a, i) in menus" :key="i">
+          <a href="javascript:;">{{ a }}</a>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="post-area">
     <div class="container">
-      <div class="post-area-item" v-for="(a, i) in postTitle" :key="i">
+      <!-- 
+        (item, i)중 item은 postTitle 배열의 데이터
+        i는 length값 (0 1 2 3 4 5~)
+       -->
+      <div class="post-area-item" v-for="(item, i) in postTitle" :key="i">
         <a href="javscript:">
-          <h4>{{ postTitle[i] }}</h4>
+          <h4>{{ item }}</h4>
           <p>{{ postContent[i] }}</p>
+          <!-- <button v-on:click="">추천</button><span>1</span> -->
         </a>
+        <button @click="recommendAdd" class="btn_recommend">추천<span>{{ recommend[i] }}</span></button>
       </div>
     </div>
   </div>
@@ -25,8 +35,15 @@ export default {
     return {
       menus : ['Post', 'Location'],
       postTitle : ['첫번째 게시글', '두번째 게시글'],
-      postContent : ['첫번째 글 내용', '두번째 글 내용']
+      postContent : ['첫번째 글 내용', '두번째 글 내용'],
+      recommend : [0, 0],
     }
+  },
+  // 함수 만드는 공간
+  methods : {
+    recommendAdd() {
+      this.recommen++;
+    },
   },
   components : {
   }
@@ -34,64 +51,6 @@ export default {
 </script>
 
 <style>
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-html {
-  font-size: 16px;
-  font-family: 'Pretendard-Regular';
-  line-height: 1.1;
-  color: #333;
-  box-sizing: border-box;
-}
-.container {
-  max-width: 1240px;
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-.title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.menu {
-  padding: 10px 0;
-  background: #000;
-}
-.menu .container {
-  display: flex;
-  align-items: center;
-}
-.menu img {
-  width: 30px;
-}
-.menu a {
-  padding: 0 15px;
-  color: #fff;
-}
-.post-area {
-  padding-top: 60px;
-  text-align: center;
-}
-.post-area .post-area-item {
-  border: 1px solid #000;
-  border-left: none;
-  border-right: none;
-}
-.post-area .post-area-item + .post-area-item {
-  border-top: none;
-}
-.post-area .post-area-item a {
-  display: block;
-  padding: 30px 0;
-}
-.post-area h4 {
-  font-size: 18px;
-  font-weight: bold;
-}
-@import url('./assets/reset.css');
+@import url('./assets/css/reset.css');
+@import url('./assets/css/style.css');
 </style>
